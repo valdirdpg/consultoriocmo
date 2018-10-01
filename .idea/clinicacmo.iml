@@ -7,6 +7,9 @@
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/beyondcode/laravel-dump-server" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/doctrine/cache" />
+      <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/doctrine/dbal" />
+      <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/doctrine/event-manager" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/doctrine/instantiator" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/doctrine/lexer" />
@@ -47,6 +50,7 @@
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/psy/psysh" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/reliese/laravel" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/sebastian/code-unit-reverse-lookup" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/sebastian/comparator" />
       <excludeFolder url="file://$MODULE_DIR$/clinicacmo/vendor/sebastian/diff" />

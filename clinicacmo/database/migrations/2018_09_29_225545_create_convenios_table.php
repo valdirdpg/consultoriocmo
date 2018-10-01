@@ -14,7 +14,7 @@ class CreateConveniosTable extends Migration
     public function up()
     {
         Schema::create('convenios', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('idconvenios');
             $table->char('nm_convenio');
             $table->date('dt_inicio');
             $table->char('ds_regioes');
