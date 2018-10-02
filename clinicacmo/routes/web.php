@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Controllers\Site;
 
+Route::resource('/Site/clinica', 'Site\CovenioController');
+Route::get('/index/', 'Site\ConvenioController@index');
 Route::get('/', function () {
     return view('welcome');
 });
+
