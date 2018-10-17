@@ -23,7 +23,7 @@ class ConvenioController extends Controller
     {
         $title = "Convenios";
         $convenio = $this->convenio->all();
-        return view('Site.clinica.convenio',compact('convenio','title'));
+        return view('Site.clinica.convenio.convenio',compact('convenio','title'));
     }
 
     /**
@@ -33,7 +33,8 @@ class ConvenioController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'CadastrarConvenio';
+        return view('Site.clinica.convenio.CadastrarConvenio', compact('title'));
     }
 
     /**
