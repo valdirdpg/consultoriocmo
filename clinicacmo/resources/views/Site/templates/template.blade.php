@@ -32,6 +32,61 @@
             @yield('cont4')
         </div>
     </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont5')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont6')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont7')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont8')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont9')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont10')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont11')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont12')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont13')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont14')
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="col-sm-6">
+            @yield('cont15')
+        </div>
+    </div>
 </div>
 </body>
 </html>

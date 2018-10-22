@@ -1,24 +1,38 @@
 @extends('Site.templates.template')
 @section('content')
 
-{!! Form::open(['method'=>'put'])!!}
 <h1>Teste</h1>
-@section('cont1')
+{!! Form::open(['route'=>'convenios.store','class' =>'form-horizontal'])!!}
+
+<div class="panel-body">
+    <div class="col-sm-6">
     {!! Form::label('Nome:') !!}
     {!!Form::text('nm_convenio',null,['class'=>'form-control','placeholder'=>'Nome do convênio'])  !!}
-@endsection
-@section('cont2')
+    </div>
+</div>
+<div class="panel-body">
+    <div class="col-sm-6">
     {!! Form::label('Data ínicio:') !!}
     {!!Form::date('dt_inicio', \Carbon\Carbon::now(),['class'=>'form-control'])  !!}
-@endsection
-@section('cont3')
+    </div>
+</div>
+<div class="panel-body">
+    <div class="col-sm-6">
     {!! Form::label('Abrangência:') !!}
     {!!Form::text('ds_regioes',null,['class'=>'form-control','placeholder'=>'Região de abrangencia convênio'])  !!}
-@endsection
-@section('cont4')
+    </div>
+</div>
+<div class="panel-body">
+    <div class="col-sm-6">
     {!! Form::label('Situação:') !!}
     {!!Form::checkbox('ativo','1',['class'=>'checkbox'])  !!}
-@endsection
+    </div>
+</div>
+<div class="panel-body">
+    <div class="col-sm-6">
+{!! Form::submit('Enviar',['class'=>'btn btn-primary']) !!}
+    </div>
+</div>
 {!! Form::close() !!}
 
 @endsection

@@ -22,6 +22,6 @@
         @endforeach
 
     </table>
-        <a href="#" class="btn-add btn btn-primary">Adicionar</a>
+        <a href="{{route('convenios.create')}}" class="btn-add btn btn-primary">Adicionar</a>
     </div>
 @endsection

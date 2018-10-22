@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Requests\Site\Request\ConvenioFormRequest;
 use App\Model\Convenio;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -33,7 +34,7 @@ class ConvenioController extends Controller
      */
     public function create()
     {
-        $title = 'CadastrarConvenio';
+        $title = "CadastrarConvenio";
         return view('Site.clinica.convenio.CadastrarConvenio', compact('title'));
     }
 
@@ -43,9 +44,20 @@ class ConvenioController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ConvenioFormRequest $request)
     {
-        //
+        //$convenio = $request->except('_token');
+        $convenio = $request->all();
+        //dd($convenio);
+
+        $convenio['ativo'] = (!isset($convenio['ativo']))? 0:1;
+        //return
+        $inserir = $this->convenio->create($convenio);
+        if($inserir):
+            return redirect()->route('convenios.index');
+        else:
+            return redirect()->route('convenios.create');
+        endif;
     }
 
     /**
