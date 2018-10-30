@@ -1,9 +1,27 @@
 @extends('Site.templates.template')
 @section('content')
 
-<h1>Teste</h1>
-{!! Form::open(['route'=>'convenios.store','class' =>'form-horizontal'])!!}
+@if(isset($convenio))
+    {!! Form::model($convenio,['route'=>['convenios.update',$convenio->id], 'class'=>'form-horizontal', 'method'=>'put']) !!}
+@else
+    {!! Form::open(['route'=>'convenios.store','class' =>'form-horizontal'])!!}
+@endif
 
+<h1> <a href="{{route('convenios.index')}}"><span class="glyphicon glyphicon-fast-backward"></span></a>
+    Gestão Produto {{$convenio->nm_convenio or 'NOVO:'}} </h1>
+
+@if(isset($errors) && count($errors) > 0)
+
+    <div class="alert alert-danger">
+
+        @foreach($errors->all() as $error)
+
+            <p>{{$error}}</p>
+
+        @endforeach
+
+    </div>
+@endif
 <div class="panel-body">
     <div class="col-sm-6">
     {!! Form::label('Nome:') !!}

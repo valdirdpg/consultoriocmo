@@ -4,10 +4,9 @@
     <list default="true" id="3ce0d0ae-1053-4919-a904-06b0ec2baf9e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clinicacmo/app/Http/Controllers/Site/ConvenioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/clinicacmo/app/Http/Controllers/Site/ConvenioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/CadastrarConvenio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/CadastrarConvenio.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/CadastrarConvenio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/convenio.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/convenio.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clinicacmo/resources/views/Site/templates/template.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/clinicacmo/resources/views/Site/templates/template.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clinicacmo/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/clinicacmo/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,15 +21,15 @@
     <session id="-898329433">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="9" />
+          <entry key="project.closed" value="12" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.11" value="2" />
+          <entry key="project.open.time.11" value="4" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.9" value="4" />
-          <entry key="project.opened" value="11" />
+          <entry key="project.open.time.9" value="5" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -39,17 +38,17 @@
           <entry key="css" value="5" />
           <entry key="env" value="1" />
           <entry key="json" value="1" />
-          <entry key="php" value="30" />
+          <entry key="php" value="38" />
           <entry key="templates" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="1" />
-          <entry key="Blade" value="5" />
+          <entry key="Blade" value="7" />
           <entry key="CSS" value="4" />
           <entry key="JSON" value="1" />
-          <entry key="PHP" value="25" />
+          <entry key="PHP" value="31" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Scratch" value="1" />
           <entry key="UML" value="1" />
@@ -58,27 +57,27 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="env" value="30" />
-          <entry key="php" value="3174" />
-          <entry key="txt" value="106" />
+          <entry key="php" value="3685" />
+          <entry key="txt" value="155" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="30" />
-          <entry key="Blade" value="1554" />
-          <entry key="PHP" value="1620" />
-          <entry key="PLAIN_TEXT" value="106" />
+          <entry key="Blade" value="1841" />
+          <entry key="PHP" value="1844" />
+          <entry key="PLAIN_TEXT" value="155" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinicacmo/app/Http/Controllers/Site/ConvenioController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="52" column="62" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
+            <state relative-caret-position="478">
+              <caret line="104" column="24" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
               <folding>
                 <element signature="e#45#100#0#PHP" expanded="true" />
               </folding>
@@ -87,37 +86,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicacmo/app/Model/Convenio.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/templates/template.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="30" />
+            <state relative-caret-position="221">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/CadastrarConvenio.blade.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clinicacmo/app/Http/Requests/Site/Request/ConvenioFormRequest.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+            <state relative-caret-position="170">
+              <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -125,7 +106,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinicacmo/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
+            <state relative-caret-position="138">
               <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
@@ -137,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/convenio.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+            <state relative-caret-position="289">
+              <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -179,13 +160,14 @@
         <option value="$PROJECT_DIR$/clinicacmo/resources/views/welcome.blade.php" />
         <option value="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio.blade.php" />
         <option value="$PROJECT_DIR$/clinicacmo/config/app.php" />
-        <option value="$PROJECT_DIR$/clinicacmo/resources/views/Site/templates/template.blade.php" />
-        <option value="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/convenio.blade.php" />
         <option value="$PROJECT_DIR$/clinicacmo/routes/web.php" />
-        <option value="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/CadastrarConvenio.blade.php" />
         <option value="$PROJECT_DIR$/clinicacmo/app/Http/Requests/Site/Request/ConvenioFormRequest.php" />
         <option value="$PROJECT_DIR$/clinicacmo/app/Model/Convenio.php" />
+        <option value="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/CadastrarConvenio.blade.php" />
+        <option value="$PROJECT_DIR$/clinicacmo/resources/views/Site/templates/template.blade.php" />
+        <option value="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/convenio.blade.php" />
         <option value="$PROJECT_DIR$/clinicacmo/app/Http/Controllers/Site/ConvenioController.php" />
+        <option value="$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/create.blade.php" />
       </list>
     </option>
   </component>
@@ -330,34 +312,7 @@
               <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
               <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
-              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
-              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-              <item name="Site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
-              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Requests" type="462c0819:PsiDirectoryNode" />
-              <item name="Site" type="462c0819:PsiDirectoryNode" />
-              <item name="Request" type="462c0819:PsiDirectoryNode" />
+              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
@@ -371,6 +326,26 @@
               <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
               <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
+              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="factories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
+              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
+              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
@@ -411,15 +386,6 @@
               <item name="Site" type="462c0819:PsiDirectoryNode" />
               <item name="clinica" type="462c0819:PsiDirectoryNode" />
               <item name="convenio" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
-              <item name="clinicacmo" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="Site" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="clinicacmo" type="b2602c69:ProjectViewProjectNode" />
@@ -491,7 +457,10 @@
       <workItem from="1539653699809" duration="3741000" />
       <workItem from="1539735186390" duration="6147000" />
       <workItem from="1539910755914" duration="7197000" />
-      <workItem from="1540132418354" duration="9091000" />
+      <workItem from="1540132418354" duration="9851000" />
+      <workItem from="1540255306885" duration="1106000" />
+      <workItem from="1540344754183" duration="4243000" />
+      <workItem from="1540859233492" duration="7255000" />
     </task>
     <task id="LOCAL-00001" summary="Criação ds Models">
       <created>1538408379044</created>
@@ -521,11 +490,25 @@
       <option name="project" value="LOCAL" />
       <updated>1539744240253</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Configuração da Model Convenios e Insert no banco">
+      <created>1540175682296</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1540175682296</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Configuração da Model Convenios e Insert no banco">
+      <created>1540175791450</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1540175791450</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67093000" />
+    <option name="totallyTimeSpent" value="80457000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -540,19 +523,19 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28366113" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20196672" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.23240589" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.23240589" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -571,7 +554,19 @@
     <MESSAGE value="Criação ds Models" />
     <MESSAGE value="Construção da views e templates" />
     <MESSAGE value="Alteração no template para cadastro de Convênios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alteração no template para cadastro de Convênios" />
+    <MESSAGE value="Configuração da Model Convenios e Insert no banco" />
+    <option name="LAST_COMMIT_MESSAGE" value="Configuração da Model Convenios e Insert no banco" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/clinicacmo/app/Http/Controllers/Site/ConvenioController.php</url>
+          <line>81</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/clinicacmo/composer.json">
@@ -699,49 +694,31 @@
     <entry file="file://$PROJECT_DIR$/clinicacmo/public/assets/painel/css/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicacmo/routes/web.php">
+    <entry file="file://$PROJECT_DIR$/clinicacmo/app/Http/Requests/Site/Request/ConvenioFormRequest.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/convenio.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        <state relative-caret-position="172">
+          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clinicacmo/database/migrations/2018_09_29_225545_create_convenios_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="21" column="37" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="21" selection-end-column="37" />
+        <state relative-caret-position="255">
+          <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicacmo/app/Http/Requests/Site/Request/ConvenioFormRequest.php">
+    <entry file="file://$PROJECT_DIR$/clinicacmo/vendor/laravel/framework/src/Illuminate/Database/Migrations/Migration.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicacmo/vendor/laravel/framework/src/Illuminate/Database/Connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
-        </state>
+        <state relative-caret-position="-10387" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/templates/template.blade.php">
+    <entry file="file://$PROJECT_DIR$/clinicacmo/public/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/CadastrarConvenio.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
-        </state>
+        <state relative-caret-position="-372" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clinicacmo/app/Model/Convenio.php">
@@ -751,13 +728,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/clinicacmo/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/templates/template.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/convenio.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="23" column="13" lean-forward="true" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/clinicacmo/app/Http/Controllers/Site/ConvenioController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="52" column="62" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
+        <state relative-caret-position="478">
+          <caret line="104" column="24" selection-start-line="104" selection-start-column="24" selection-end-line="104" selection-end-column="24" />
           <folding>
             <element signature="e#45#100#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinicacmo/resources/views/Site/clinica/convenio/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
         </state>
       </provider>
     </entry>

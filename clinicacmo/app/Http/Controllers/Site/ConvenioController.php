@@ -68,7 +68,7 @@ class ConvenioController extends Controller
      */
     public function show(Convenio $convenio)
     {
-        //
+        return 'Teste ' . $convenio->id;
     }
 
     /**
@@ -77,9 +77,14 @@ class ConvenioController extends Controller
      * @param  \App\Model\Convenio  $convenio
      * @return \Illuminate\Http\Response
      */
-    public function edit(Convenio $convenio)
+    public function edit($id)
     {
-        //
+        $convenio = $this->convenio->find($id);
+
+        $title = "Editar Convênio: {$convenio->nm_convenio}";
+
+
+        return view('Site.clinica.convenio.create', compact('title',  'convenio'));
     }
 
     /**
@@ -89,9 +94,27 @@ class ConvenioController extends Controller
      * @param  \App\Model\Convenio  $convenio
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Convenio $convenio)
+    public function update(ConvenioFormRequest $request,$id)
     {
-        //
+        $dataForm = $request->all();
+
+        // Recupera o item para editar
+        $convenio = $this->convenio->find($id);
+
+        // Verifica se o produto está ativado
+        $dataForm['ativo'] = (! isset($dataForm['ativo'])) ? 0 : 1;
+
+        // Altera os itens
+        $update = $convenio->update($dataForm);
+
+        // Verifica se realmente editou
+        if ($update)
+            return redirect()->route('convenios.index');
+        else
+            //with é utilizado para passsar uma mensagem dentro de um array
+            return redirect()->route('convenios.edit', $convenio->id)->with([
+                'errors' => 'Falha ao editar'
+            ]);
     }
 
     /**
@@ -103,5 +126,23 @@ class ConvenioController extends Controller
     public function destroy(Convenio $convenio)
     {
         //
+    }
+
+    public function search(Request $request) {
+        //Pega os dados do formulário
+
+        $dataForm = $request->except('_token');
+        $keySearch = $dataForm['search'];
+
+        // Título da página
+        $title = "Resultados para produto: {$keySearch}";
+
+        // Faz o filtro dos dados
+        $convenios = $this->convenio->where('name', 'LIKE', "%$keySearch%")
+            ->orWhere('description', 'LIKE', "%$keySearch%")
+            ->paginate($this->totalPage);
+
+        return view('Site.clinica.convenio.index', compact('convenios', 'title', 'dataForm'));
+
     }
 }
