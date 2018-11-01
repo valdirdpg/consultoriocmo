@@ -3,12 +3,17 @@
 
 @if(isset($convenio))
     {!! Form::model($convenio,['route'=>['convenios.update',$convenio->id], 'class'=>'form-horizontal', 'method'=>'put']) !!}
+    <h1> <a href="{{route('convenios.index')}}"><span class="glyphicon glyphicon-fast-backward"></span></a>
+
+        Gerenciar Convênio - {{$convenio->nm_convenio}}  </h1>
 @else
     {!! Form::open(['route'=>'convenios.store','class' =>'form-horizontal'])!!}
+    <h1> <a href="{{route('convenios.index')}}"><span class="glyphicon glyphicon-fast-backward"></span></a>
+
+        Gerenciar Convênio - {{$cabecalho}}  </h1>
 @endif
 
-<h1> <a href="{{route('convenios.index')}}"><span class="glyphicon glyphicon-fast-backward"></span></a>
-    Gestão Produto {{$convenio->nm_convenio or 'NOVO:'}} </h1>
+
 
 @if(isset($errors) && count($errors) > 0)
 

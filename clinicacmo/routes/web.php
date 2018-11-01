@@ -11,8 +11,8 @@
 |
 */
 //use App\Http\Controllers\Site;
-
-Route::resource('/clinica/convenios', 'Site\ConvenioController');
+Route::any('/Site/convenios/pesquisar', 'Site\ConvenioController@search')->name('convenios.search');
+Route::resource('/Site/convenios', 'Site\ConvenioController');
 Route::get('/index', 'Site\ConvenioController@index');
 Route::get('/convenio', 'Site\ConvenioController@create');
 Route::get('/', function () {

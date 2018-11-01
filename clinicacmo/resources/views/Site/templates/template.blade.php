@@ -8,9 +8,10 @@
     <link rel="stylesheet" type="text/css" href="/assets/painel/css/style.css">
     <title>{{$title}}</title>
 </head>
-<body>
-@yield('content')
+    <body>
+        <div class="container">
+            @yield('content')
+        </div>
 
-
-</body>
+    </body>
 </html>

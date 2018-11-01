@@ -1,11 +1,12 @@
 @extends('Site.templates.template')
-<h1>Lista de Convênios</h1>
+
 @section('content')
+    <h1>Lista de Convênios</h1>
     <div class="panel panel-default table-responsive col-lg-6">
-        {!! Form::open(['route' => 'convenios.index', 'class' => 'form form-inline form-search']) !!}
-        {!! Form::text('search', null, ['placeholder' => 'Pesquisar?', 'class' => 'form-control']) !!}
+        {!! Form::open(['route' => 'convenios.search', 'class' => 'form form-inline form-search'])!!}
+        {!! Form::text('search', null, ['placeholder' => 'Pesquisar?', 'class' => 'form-control'])!!}
         {!! Form::submit('search', ['class' => 'btn btn-success']) !!}
-        {!! Form::close() !!}
+        {!! Form::close() !!}  </div>
     <table class="table table-striped">
         <tr>
             <th>Código</th>
@@ -26,6 +27,11 @@
         @endforeach
 
     </table>
-        <a href="{{route('convenios.create')}}" class="btn-add btn btn-primary">Adicionar</a>
-    </div>
+
+    <a href="{{route('convenios.create')}}" class="btn btn-primary btn-add">
+        <span class="glyphicon glyphicon-plus"></span> Cadastrar
+    </a>
+    <div>{{$convenio->links()}}</div>
+
+
 @endsection
