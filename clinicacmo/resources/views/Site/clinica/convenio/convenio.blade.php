@@ -1,9 +1,12 @@
 @extends('Site.templates.template')
 
 @section('content')
-    <h1>Lista de Convênios</h1>
-    <div class="panel panel-default table-responsive col-lg-6">
-        {!! Form::open(['route' => 'convenios.search', 'class' => 'form form-inline form-search'])!!}
+
+
+        <div class="panel-heading">
+            <h1 class="page-header">{{$tela ?? 'Convênio Localizado'}}</h1></div>
+    <div class="panel table-responsive col-lg-10">
+        {!! Form::open(['route' => 'convenios.search', 'class' => 'form-inline form-search'])!!}
         {!! Form::text('search', null, ['placeholder' => 'Pesquisar?', 'class' => 'form-control'])!!}
         {!! Form::submit('search', ['class' => 'btn btn-success']) !!}
         {!! Form::close() !!}  </div>

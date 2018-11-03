@@ -3,17 +3,13 @@
 
 @if(isset($convenio))
     {!! Form::model($convenio,['route'=>['convenios.update',$convenio->id], 'class'=>'form-horizontal', 'method'=>'put']) !!}
-    <h1> <a href="{{route('convenios.index')}}"><span class="glyphicon glyphicon-fast-backward"></span></a>
 
-        Gerenciar Convênio - {{$convenio->nm_convenio}}  </h1>
 @else
     {!! Form::open(['route'=>'convenios.store','class' =>'form-horizontal'])!!}
-    <h1> <a href="{{route('convenios.index')}}"><span class="glyphicon glyphicon-fast-backward"></span></a>
 
-        Gerenciar Convênio - {{$cabecalho}}  </h1>
 @endif
 
-
+<h1 class=""> <a href="{{route('convenios.index')}}"><span class="glyphicon glyphicon-fast-backward"></span></a>{{$tela}}</h1>
 
 @if(isset($errors) && count($errors) > 0)
 
@@ -51,13 +47,14 @@
     {!!Form::checkbox('ativo','1',['class'=>'checkbox'])  !!}
     </div>
 </div>
-<div class="panel-body">
-    <div class="col-sm-6">
-{!! Form::submit('Enviar',['class'=>'btn btn-primary']) !!}
+<div id="actions" class="row">
+    <div class="col-md-12">
+{!! Form::submit('Salvar',['class'=>'btn btn-primary']) !!}
+<a href="{{route('convenios.index')}}"><span class="btn btn-default">Cancelar</span></a>
+
     </div>
 </div>
 {!! Form::close() !!}
 
 @endsection
-
 
