@@ -15,16 +15,24 @@ class ConvenioController extends Controller
      * @return \Illuminate\Http\Response
      */
     private $convenio;
+    private $totalpage = 5;
+
     public function __construct(Convenio $convenio)
     {
-       $this->convenio = $convenio;
+        $this->convenio = $convenio;
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
-        $title = "Convenios";
-        $convenio = $this->convenio->all();
-        return view('Site.clinica.convenio.convenio',compact('convenio','title'));
+        $title = "convenios";
+        $convenio = $this->convenio->paginate($this->totalpage);
+        $tela = 'Convênios';
+        $rotaSearch = "convenios.search";
+        $rotaCreate = "convenios.create";
+        return view('Site.clinica.convenio.convenio',compact('convenio','title', 'tela','rotaSearch','rotaCreate'));
     }
 
     /**
@@ -34,8 +42,10 @@ class ConvenioController extends Controller
      */
     public function create()
     {
-        $title = "CadastrarConvenio";
-        return view('Site.clinica.convenio.CadastrarConvenio', compact('title'));
+        $title = 'Cadastrar Convenio';
+        $tela =  'Gerenciar Convênios - Novo:';
+        $rotaCreate = "convenios.create";
+        return view('Site.clinica.convenio.create-edit', compact('title', 'cabecalho', 'tela','rotaCreate'));
     }
 
     /**
@@ -66,9 +76,12 @@ class ConvenioController extends Controller
      * @param  \App\Model\Convenio  $convenio
      * @return \Illuminate\Http\Response
      */
-    public function show(Convenio $convenio)
+    public function show($id)
     {
-        return 'Teste ' . $convenio->id;
+
+        $convenio = $this->convenio->find($id);
+        $title = "Convenio: $convenio->nm_convenio";
+        return view('Site.clinica.convenio.show',compact('convenio','title'));
     }
 
     /**
@@ -83,8 +96,8 @@ class ConvenioController extends Controller
 
         $title = "Editar Convênio: {$convenio->nm_convenio}";
 
-
-        return view('Site.clinica.convenio.create', compact('title',  'convenio'));
+        $tela = "Gerenciar Convênio - {$convenio->nm_convenio}"  ;
+        return view('Site.clinica.convenio.create-edit', compact('title',  'convenio', 'tela'));
     }
 
     /**
@@ -101,7 +114,7 @@ class ConvenioController extends Controller
         // Recupera o item para editar
         $convenio = $this->convenio->find($id);
 
-        // Verifica se o produto está ativado
+        // Verifica se o convenio está ativado
         $dataForm['ativo'] = (! isset($dataForm['ativo'])) ? 0 : 1;
 
         // Altera os itens
@@ -123,26 +136,36 @@ class ConvenioController extends Controller
      * @param  \App\Model\Convenio  $convenio
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Convenio $convenio)
+    public function destroy($id)
     {
-        //
+        //localiza o convenio a ser deletado
+        $convenio = $this->convenio->find($id);
+        //deleta convenio atribuindo valo a variável
+        $delete = $convenio->delete();
+        //redireciona a janela após deletar
+        if ($delete):
+            return redirect()->route('convenios.index');
+        else:
+            return redirect()->route('convenios.show',$id)->with(['errors'=>'Erro ao tentar deletar convenio']);
+        endif;
     }
 
     public function search(Request $request) {
         //Pega os dados do formulário
-
+        $rotaSearch = "convenios.search";
+        $rotaCreate = "convenios.create";
         $dataForm = $request->except('_token');
         $keySearch = $dataForm['search'];
 
         // Título da página
-        $title = "Resultados para produto: {$keySearch}";
+        $title = "Convênios: {$keySearch}";
 
         // Faz o filtro dos dados
-        $convenios = $this->convenio->where('name', 'LIKE', "%$keySearch%")
-            ->orWhere('description', 'LIKE', "%$keySearch%")
-            ->paginate($this->totalPage);
+        $convenio = $this->convenio->where('nm_convenio', 'LIKE', "%$keySearch%")
+            ->orWhere('ds_regioes', 'LIKE', "%$keySearch%")
+            ->paginate($this->totalpage);
 
-        return view('Site.clinica.convenio.index', compact('convenios', 'title', 'dataForm'));
+        return view('Site.clinica.convenio.convenio', compact('convenio', 'title', 'dataForm','keySearch','rotaSearch','rotaCreate'));
 
     }
 }

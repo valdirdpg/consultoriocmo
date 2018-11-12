@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Requests\Site\Request\EspecialidadeFormRequest;
 use App\Model\Especialidade;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -13,9 +14,22 @@ class EspecialidadeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    private $especialidade;
+    private $totalpage = 5;
+
+    public function __construct(Especialidade $especialidade)
+    {
+        $this->especialidade = $especialidade;
+    }
     public function index()
     {
-        //
+        $especialidade = $this->especialidade->paginate($this->totalpage);
+        $title = "Especialidades";
+        $tela = 'Especialidade';
+        $rotaSearch = "especialidades.search";
+        $rotaCreate = "especialidades.create";
+        return view('Site.clinica.especialidade.especialidade', compact('title','tela','rotaSearch','rotaCreate','especialidade'));
+
     }
 
     /**
@@ -25,7 +39,10 @@ class EspecialidadeController extends Controller
      */
     public function create()
     {
-        //
+        $title = 'Cadastrar Especialidades';
+        $tela =  'Gerenciar Especialidades - Novo:';
+        $rotaCreate = "especialidades.create";
+        return view('Site.clinica.especialidade.create-edit', compact('title', 'cabecalho', 'tela','rotaCreate'));
     }
 
     /**
@@ -34,9 +51,19 @@ class EspecialidadeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(EspecialidadeFormRequest $request)
     {
-        //
+        $formulario = $request->all();
+
+        $formulario['ativo'] = (!isset($formulario['ativo'])) ? 0 : 1;
+
+        $inserir = $this->especialidade->create($formulario);
+
+        if ($inserir)
+            return redirect()->route('especialidades.index');
+        else
+            return redirect()->route('especialidades.create');
+
     }
 
     /**
@@ -56,9 +83,12 @@ class EspecialidadeController extends Controller
      * @param  \App\Model\Especialidade  $especialidade
      * @return \Illuminate\Http\Response
      */
-    public function edit(Especialidade $especialidade)
+    public function edit($id)
     {
-        //
+        $especialidade= $this->especialidade->find($id);
+        $tela = "Gerenciar Especialidades - {$especialidade->ds_especialidades}";
+        $title = "Especialidades";
+        return view('Site.clinica.especialidade.create-edit',compact('title','especialidade','tela'));
     }
 
     /**
@@ -68,9 +98,20 @@ class EspecialidadeController extends Controller
      * @param  \App\Model\Especialidade  $especialidade
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Especialidade $especialidade)
+    public function update(EspecialidadeFormRequest $request, $id)
     {
-        //
+        $dataForm = $request->all();
+
+        $formulario = $this->especialidade->find($id);
+
+        $dataForm['ativo'] = (!isset($dataForm['ativo'])) ? 0 : 1;
+
+        $update = $formulario->update($dataForm);
+
+        if ($update)
+            return redirect()->route('especialidades.index');
+        else
+            return redirect()->route('especialidades.edit',$formulario->id)->with(['errors'=>'Erro ao tetar alterar especialidade!']);
     }
 
     /**
