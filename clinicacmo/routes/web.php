@@ -12,8 +12,11 @@
 */
 //use App\Http\Controllers\Site;
 Route::any('/Site/convenios/pesquisar', 'Site\ConvenioController@search')->name('convenios.search');
+Route::any('/Site/especialidades/pesquisar', 'Site\EspecialidadeController@search')->name('especialidades.search');
 Route::resource('/Site/convenios', 'Site\ConvenioController');
-Route::get('/index', 'Site\ConvenioController@index');
+Route::resource('/Site/especialidades','Site\EspecialidadeController');
+Route::get('/convenio', 'Site\ConvenioController@index');
+route::get('/especialidade', 'Site\EspecialidadeController@index');
 Route::get('/convenio', 'Site\ConvenioController@create');
 Route::get('/', function () {
     return view('welcome');

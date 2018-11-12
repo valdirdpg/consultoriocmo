@@ -4,7 +4,7 @@ namespace App\Http\Requests\Site\Request;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ConvenioFormRequest extends FormRequest
+class EspecialidadeFormRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,16 @@ class ConvenioFormRequest extends FormRequest
     public function rules()
     {
         return [
-               'nm_convenio'=>'required|min:3|max:50',
-               'ds_regioes'=>'required|min:5|max:50',
+            'ds_especialidades'=>'required|min:5|max:50',
         ];
     }
 
-    public function messages() {
+    public function messages()
+    {
         return [
-            'nm_convenio.required' => 'O campo nome do convênio é de preenchimento obrigatorio!',
-            'ds_regioes.required' => 'O campo regiões é de preenchimento obrigatório!',
-
+            'ds_especialidades.required'=>'Este campo é de preenchimento obrigatório',
+            'ds_especialidades.min'=> 'Este campo deve ser preenchido por no mínimo 5 caracteres!',
+            'ds_especialidades.max'=> 'Limite de caracteres excedido para este campo!'
         ];
     }
 }

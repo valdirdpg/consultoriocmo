@@ -15,7 +15,7 @@ class CreateMedicosTable extends Migration
     {
 
         Schema::create('medicos', function (Blueprint $table) {
-            $table->increments('idmedicos');
+            $table->increments('id');
             $table->char('nm_medico',45);
             $table->integer('cpf_medico');
             $table->integer('rg_medico');
@@ -27,6 +27,7 @@ class CreateMedicosTable extends Migration
             $table->integer('cd_especialidade');
             $table->date('dt_registro');
             $table->timestamps();
+            $table->boolean('ativo');
         });
     }
 

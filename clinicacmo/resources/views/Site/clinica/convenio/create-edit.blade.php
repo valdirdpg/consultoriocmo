@@ -1,4 +1,5 @@
 @extends('Site.templates.template')
+
 @section('content')
 
 @if(isset($convenio))
@@ -9,7 +10,7 @@
 
 @endif
 
-<h1 class=""> <a href="{{route('convenios.index')}}"><span class="glyphicon glyphicon-fast-backward"></span></a>{{$tela}}</h1>
+<h2 class=""> <a href="{{route('convenios.index')}}"></a>{{$tela}}</h2>
 
 @if(isset($errors) && count($errors) > 0)
 
@@ -47,8 +48,8 @@
     {!!Form::checkbox('ativo','1',['class'=>'checkbox'])  !!}
     </div>
 </div>
-<div id="actions" class="row">
-    <div class="col-md-12">
+<div id="actions" class="panel-bold">
+    <div class="col-md-6">
 {!! Form::submit('Salvar',['class'=>'btn btn-primary']) !!}
 <a href="{{route('convenios.index')}}"><span class="btn btn-default">Cancelar</span></a>
 

@@ -14,7 +14,7 @@ class CreatePacientesTable extends Migration
     public function up()
     {
         Schema::create('pacientes', function (Blueprint $table) {
-            $table->increments('idpacientes');
+            $table->increments('id');
             $table->char('nm_paciente') 		;
             $table->date('dt_Nascimento') 	;
             $table->char('sexo') 			;
@@ -40,6 +40,7 @@ class CreatePacientesTable extends Migration
             $table->integer('cd_prontuario') ;
             $table->datetime('dt_registro') 	;
             $table->timestamps();
+            $table->boolean('ativo');
         });
     }
 

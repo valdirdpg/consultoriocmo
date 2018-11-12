@@ -14,7 +14,7 @@ class CreateFuncionariosTable extends Migration
     public function up()
     {
         Schema::create('funcionarios', function (Blueprint $table) {
-            $table->increments('idfuncionario');
+            $table->increments('id');
             $table->char('nome') 		;
             $table->date('dt_Nascimento') 	;
             $table->char('sexo') 			;
@@ -32,6 +32,7 @@ class CreateFuncionariosTable extends Migration
             $table->char('ct_email') 		;
             $table->date('admissao');
             $table->timestamps();
+            $table->boolean('ativo');
         });
     }
 
