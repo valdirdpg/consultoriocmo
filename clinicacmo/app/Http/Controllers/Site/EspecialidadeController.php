@@ -72,9 +72,12 @@ class EspecialidadeController extends Controller
      * @param  \App\Model\Especialidade  $especialidade
      * @return \Illuminate\Http\Response
      */
-    public function show(Especialidade $especialidade)
+    public function show($id)
     {
-        //
+        $exibir= $this->especialidade->find($id);
+        $title = "Excluir especialidade";
+
+        return view('Site.clinica.especialidade.show', compact('exibir','title'));
     }
 
     /**
@@ -120,8 +123,15 @@ class EspecialidadeController extends Controller
      * @param  \App\Model\Especialidade  $especialidade
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Especialidade $especialidade)
+    public function destroy($id)
     {
-        //
+        $especialidade = $this->especialidade->find($id);
+
+        $delete = $especialidade->delete();
+
+        if ($delete)
+            return redirect()->route('especialidades.index');
+        else
+            return redirect()->route('especialidades.show',$id)->with(['errors'=>'Ocorreu um problema ao tentar deletar dados.']);
     }
 }
