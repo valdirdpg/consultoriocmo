@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Requests\Site\Request\FormMedicosRequest;
 use App\Model\Medico;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -15,7 +16,10 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        //
+       $title = "Medicos";
+       $tela = "Lista de Médicos";
+       $rotaCreate = "medicos.create";
+        return view('Site.clinica.medico.medico',compact('title', 'tela','rotaCreate'));
     }
 
     /**
@@ -34,7 +38,7 @@ class MedicoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(FormMedicosRequest $request)
     {
         //
     }
@@ -68,7 +72,7 @@ class MedicoController extends Controller
      * @param  \App\Model\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Medico $medico)
+    public function update(FormMedicosRequest $request, Medico $medico)
     {
         //
     }

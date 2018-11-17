@@ -107,7 +107,7 @@ class EspecialidadeController extends Controller
 
         $formulario = $this->especialidade->find($id);
 
-        $dataForm['ativo'] = (!isset($dataForm['ativo'])) ? 0 : 1;
+        $dataForm['ativo'] = (isset($dataForm['ativo'])) ? 1 : 0;
 
         $update = $formulario->update($dataForm);
 

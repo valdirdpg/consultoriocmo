@@ -24,13 +24,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Bootstrap theme</a>
+            <a class="navbar-brand" href="/">Home</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="{{route('convenios.index')}}">Convenios</a></li>
                 <li class="active"><a href="{{route('especialidades.index')}}">Especialidades</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="{{route('medicos.index')}}">Médicos</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
                     <ul class="dropdown-menu">

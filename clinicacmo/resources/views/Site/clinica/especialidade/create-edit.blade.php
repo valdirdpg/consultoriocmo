@@ -25,7 +25,7 @@
     <div class="panel-body">
         <div class="col-sm-6">
             {!! Form::label('Situação:') !!}
-            {!! Form::checkbox('ativo','1',['class'=>'checkbox']) !!}
+            {!! Form::checkbox('ativo') !!}
         </div>
     </div>
 <div id="actions" class="panel-bold">

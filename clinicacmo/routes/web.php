@@ -13,6 +13,8 @@
 //use App\Http\Controllers\Site;
 Route::any('/Site/convenios/pesquisar', 'Site\ConvenioController@search')->name('convenios.search');
 Route::any('/Site/especialidades/pesquisar', 'Site\EspecialidadeController@search')->name('especialidades.search');
+Route::any('/Site/medicos/pesquisar','Site\MedicoController@search')->name('medicos.search');
+Route::resource('Site/medicos','Site\MedicoController');
 Route::resource('/Site/convenios', 'Site\ConvenioController');
 Route::resource('/Site/especialidades','Site\EspecialidadeController');
 Route::get('/convenio', 'Site\ConvenioController@index');
