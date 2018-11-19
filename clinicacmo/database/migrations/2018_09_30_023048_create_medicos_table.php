@@ -21,11 +21,7 @@ class CreateMedicosTable extends Migration
             $table->integer('rg_medico');
             $table->integer('nr_crm');
             $table->char('nm_usuario');
-            $table->char('senha');
-            $table->integer('num_acesso');
-            $table->integer('laudo_idlaudo');
             $table->integer('cd_especialidade');
-            $table->date('dt_registro');
             $table->timestamps();
             $table->boolean('ativo');
         });

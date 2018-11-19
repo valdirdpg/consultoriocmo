@@ -32,13 +32,9 @@ class CreatePacientesTable extends Migration
             $table->char('nr_telefone')		;
             $table->char('nr_celular') 		;
             $table->char('ct_email') 		;
-            $table->char('senha') 			;
-            $table->char('usuario') 			;
             $table->integer('cd_convenio') 	;
-            $table->integer('cd_laudo') 		;
-            $table->integer('idade') 			;
-            $table->integer('cd_prontuario') ;
-            $table->datetime('dt_registro') 	;
+            $table->integer('idade')  		;
+            $table->integer('cd_prontuario');
             $table->timestamps();
             $table->boolean('ativo');
         });

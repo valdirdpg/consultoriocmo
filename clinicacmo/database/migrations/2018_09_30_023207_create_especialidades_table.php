@@ -17,7 +17,6 @@ class CreateEspecialidadesTable extends Migration
         Schema::create('especialidades', function (Blueprint $table) {
             $table->increments('id');
             $table->char('ds_especialidades',45);
-            $table->dateTime('dt_registro');
             $table->timestamps();
             $table->boolean('ativo');
         });

@@ -18,7 +18,6 @@ class CreateConveniosTable extends Migration
             $table->char('nm_convenio');
             $table->date('dt_inicio');
             $table->char('ds_regioes');
-            $table->date('dt_registro');
             $table->boolean('ativo');
             $table->timestamps();
         });

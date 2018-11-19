@@ -24,24 +24,27 @@ class FormMedicosRequest extends FormRequest
     public function rules()
     {
         return [
-            'nm_medico'=>'alpha|required|min:10|max:60',
-            'cpf_medico'=>'alpha_num|min:11|max:11' ,
-            'rg_medico'=>'min:8|max:11' ,
-            'nm_usuario'=>'unique:connection.users,email_address',
-            'nr_crm'=>'required',
+            'nm_medico'=>'string|required|min:10|max:60',
+            'cpf_medico'=>'numeric|digits_between:11,11',//|unique:medicos,cpf_medico' ,
+            'rg_medico'=>'numeric|digits_between:8,11',//|unique:medicos,rg_medico' ,
+            'nm_usuario'=>'required|max:40',//|unique:medicos,nm_usuario',
+            'nr_crm'=>'required|max:8',//|unique:medicos,nr_crm',
             'cd_especialidade'=>'required',
-
-        ];
+            ];
     }
     public function messages()
     {
-       return [ 'nm_medico.required'=>'Este campo é de preenchimento obrigatório!',
-                'nm_medico.alpha'=>'Este campo só deve conter letras!',
-                'cpf_medico.alpha_num'=>'Preencha com caracteres válidos!' ,
-                'cpf_medico'=>'Este campo requer 11 caracteres válidos!' ,
-                'rg_medico'=>'Campo preenchido incorretamente, favor verificar!' ,
-                'nr_crm'=>  'Este campo é de preenchimento !obrigatório!',
-                'cd_especialidade'=>'Este campo é de preenchimento obrigatório!',
-       ];
+        return [
+            'nm_medico.required'=>'Este campo é de preenchimento obrigatório!',
+            'nm_medico.string'=>'O campo Nome só deve conter letras e sem acentos!',
+            'cpf_medico.digits_between'=>'O campo CPF dever ser preenchido com 11 caracteres!' ,
+            'rg_medico.digits_between'=>'Campo RG preenchido incorretamente. O mesmo deve conter entre 8 e 11 caracters numéricos!' ,
+            'nm_usuario.unique'=>'O email informado já existe',
+            'cpf_medico.unique'=>'O CPF informado já existe!',
+            'rg_medico.unique'=>'O RG informado já existe!',
+            'nr_crm.unique'=>'O CRM informado já existe!',
+            'nr_crm.required'=>  'Este campo é de preenchimento obrigatório!',
+            'cd_especialidade.required'=>'Este campo é de preenchimento obrigatório!',
+        ];
     }
 }
