@@ -6,6 +6,7 @@ use App\Http\Requests\Site\Request\FormMedicosRequest;
 use App\Model\Medico;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use phpDocumentor\Reflection\Types\This;
 
 class MedicoController extends Controller
 {
@@ -14,12 +15,21 @@ class MedicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public $medico;
+    public $totalpage = 5;
+
+    public function __construct(Medico $medico)
+    {
+        $this->medico = $medico;
+    }
     public function index()
     {
-       $title = "Medicos";
-       $tela = "Lista de Médicos";
-       $rotaCreate = "medicos.create";
-        return view('Site.clinica.medico.medico',compact('title', 'tela','rotaCreate'));
+        $medico = $this->medico->paginate($this->totalpage);
+        $title = "Medicos";
+        $tela = "Lista de Médicos";
+        $rotaSearch = 'medicos.search';
+        $rotaCreate = "medicos.create";
+        return view('Site.clinica.medico.medico',compact('title', 'tela','rotaCreate','medico','rotaSearch'));
     }
 
     /**
@@ -27,9 +37,13 @@ class MedicoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function create()
     {
-        //
+        $title = "Cadastro Médico";
+        $tela = "Gerenciar Médico - Novo:";
+        $rotaCreate = 'medicos.create';
+        return view('Site.clinica.medico.create-edit', compact('title','tela','rotaCreate'));
     }
 
     /**
@@ -40,7 +54,16 @@ class MedicoController extends Controller
      */
     public function store(FormMedicosRequest $request)
     {
-        //
+        $formulario = $request->all();
+        $formulario['ativo'] = (isset($formulario['ativo']))? 1 : 0;
+        $inserir = $this->medico->create($formulario);
+        if($inserir):
+            return redirect()->route('medicos.index');
+        else:
+            return redirect()->route('medicos.store')->with([
+                'errors'=>'Ocorreu um problema ao tentar inserir dados. tente novamente!'
+            ]);
+        endif;
     }
 
     /**
@@ -49,20 +72,20 @@ class MedicoController extends Controller
      * @param  \App\Model\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function show(Medico $medico)
+    public function show($id)
     {
-        //
+        $medico = $this->medico->find($id);
+        $title = "Médico: {$medico->nm_medico}";
+        return view('Site.clinica.medico.show',compact('medico','title'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Model\Medico  $medico
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Medico $medico)
+    public function edit($id)
     {
-        //
+        $medico = $this->medico->find($id);
+        $title = "Editar Cadastro";
+        $tela = "Gerenciar Medico: {$medico->nm_medico}";
+        return view('Site.clinica.medico.create-edit',compact('medico','title','tela'));
+
     }
 
     /**
@@ -72,9 +95,18 @@ class MedicoController extends Controller
      * @param  \App\Model\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function update(FormMedicosRequest $request, Medico $medico)
+    public function update(FormMedicosRequest $request, $id)
     {
-        //
+        $dataForm = $request->all();
+        $dataForm['ativo'] = (isset($dataForm['ativo'])) ? 1:0;
+        $formulario = $this->medico->find($id);
+        $update = $formulario->update($dataForm);
+        if ($update):
+            return redirect()->route('medicos.index');
+        else:
+            return redirect()->route('medicos.update',$formulario->id);
+        endif;
+
     }
 
     /**
@@ -83,8 +115,17 @@ class MedicoController extends Controller
      * @param  \App\Model\Medico  $medico
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Medico $medico)
+    public function destroy($id)
     {
-        //
+        $medico = $this->medico->find($id);
+
+        $delete = $medico->delete();
+
+        if ($delete):
+            return redirect()->route('medicos.index');
+        else:
+            return redirect()->route('medicos.show',$id)->with(['errors'=>'Ocorreu um erro na tentativa de deletar registro.']);
+        endif;
+
     }
 }
